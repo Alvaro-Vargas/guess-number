@@ -36,7 +36,9 @@ function newGame() {
   document.querySelector('.guess').value = '';
 }
 
-function checkNumber(guess) {
+function checkNumber() {
+  const guess = Number(document.querySelector('.guess').value);
+
   if (!guess) {
     displayMessage('⛔️ No Number!');
   } else if (guess === secretNumber) {
@@ -65,8 +67,14 @@ function checkNumber(guess) {
 
 // Event Listeners
 document.querySelector('.check').addEventListener('click', () => {
-  const guess = Number(document.querySelector('.guess').value);
-  checkNumber(guess);
+  checkNumber();
 });
 
 document.querySelector('.again').addEventListener('click', newGame);
+
+document.addEventListener('keyup', event => {
+  if (event.key === 'Enter' || event.keyCode === 13) {
+    checkNumber();
+    console.log(event.key);
+  }
+});
