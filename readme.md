@@ -8,7 +8,7 @@ Guess the mistery number...
 
 ### Enhancements:
 
-- Refactor
+- ~~Refactor~~
 - Flip number (animate)
 - Make it multi player
 
